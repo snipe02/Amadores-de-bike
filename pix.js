@@ -416,7 +416,7 @@ async function gerarPDFRapido(reg) {
     );
 
     doc.save(
-      `ecociclismo_${reg.nome.replace(/\s/g, "_")}_${numeroInscricao}.pdf`
+      `amadores de bike_${reg.nome.replace(/\s/g, "_")}_${numeroInscricao}.pdf`
     );
     toast(
       `PDF gerado! Nº #${numeroInscricao}${ganhaMedalha ? " 🏅" : ""}`,
@@ -471,7 +471,7 @@ async function mostrarConfirmacao(registro) {
   container.innerHTML = `
     <div style="text-align:center;margin-bottom:16px">
       <div class="confirmed-avatar"><i class="fas fa-check-double"></i></div>
-      <h2 style="font-size:1.5rem;font-weight:700;margin-top:12px;color:#15803d">Inscrição Confirmada!</h2>
+      <h2 style="font-size:1.5rem;font-weight:700;margin-top:12px;color:#15803d">Inscrição Confirmada!-Pagar logo após</h2>
       <p style="color:#4b5563;margin-top:6px;">Evento: 06/08/2026</p>
     </div>
     ${medalhaHTML}
@@ -984,7 +984,7 @@ window.renderizarPix = function renderizarPix(containerId, registro) {
   const whatsappLink =
     "https://wa.me/+5586994459953?text=" +
     encodeURIComponent(
-      "Olá, confirma  minha inscrição do evento Amadores de Bike. meu pix"
+      "Olá, confirmar  minha inscrição do evento Amadores de Bike. meu pix"
     );
 
   const waDiv = document.createElement("div");
@@ -1025,11 +1025,11 @@ document.getElementById("btnGerarInscricao")?.addEventListener("click", async ()
       const el = document.getElementById(id);
       if (el) el.value = "";
     });
-    toast("Inscrição gratuita realizada! Código gerado.", "#2e7d32");
+    toast("Inscrição  realizada! Código gerado.", "#2e7d32");
   } catch (err) {
     toast("Erro: " + err.message, "#c0392b");
   } finally {
-    btn.innerHTML = '<i class="fas fa-ticket-alt"></i> Realizar inscrição gratuita';
+    btn.innerHTML = '<i class="fas fa-ticket-alt"></i> Realizar inscrição ';
     btn.disabled = false;
   }
 });
