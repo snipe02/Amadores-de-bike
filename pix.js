@@ -27,7 +27,7 @@ const firebaseConfig = {
   appId: "1:776446988108:web:ea8a03286d587abc8bc9e9",
 };
 
-const LIMITE_MEDALHA = 7;
+const LIMITE_MEDALHA = 100;
 let db, auth, adminLogado = false;
 let mostrarDuplicatas = false;
 
