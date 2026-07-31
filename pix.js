@@ -245,7 +245,7 @@ async function gerarPDFRapido(reg) {
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
     const marginX = 15;
-    const dataEvento = "06/08/2026";
+    const dataEvento = "06/09/2026";
 
     doc.setFillColor(30, 74, 47);
     doc.rect(0, 0, pageWidth, 38, "F");
@@ -409,7 +409,7 @@ async function gerarPDFRapido(reg) {
     doc.setFontSize(9);
     doc.setTextColor(100, 100, 100);
     doc.text(
-      "Amadores de bike • Apresente este comprovante no dia 06/08/2026",
+      "Amadores de bike • Apresente este comprovante no dia 06/09/2026",
       pageWidth / 2,
       finalY,
       { align: "center" }
@@ -463,7 +463,7 @@ async function mostrarConfirmacao(registro) {
         <span class="medalha-icone">🏅</span>
         <div class="medalha-titulo">Você ganhou uma medalha!</div>
         <div class="medalha-subtitulo">Está entre os primeiros ${LIMITE_MEDALHA} inscritos</div>
-        <span class="medalha-faixa">Retire no evento (06/08/2026) • Apresente este comprovante</span>
+        <span class="medalha-faixa">Retire no evento (06/09/2026) • Apresente este comprovante</span>
       </div>
     `
     : "";
@@ -471,8 +471,8 @@ async function mostrarConfirmacao(registro) {
   container.innerHTML = `
     <div style="text-align:center;margin-bottom:16px">
       <div class="confirmed-avatar"><i class="fas fa-check-double"></i></div>
-      <h2 style="font-size:1.5rem;font-weight:700;margin-top:12px;color:#15803d">Inscrição Confirmada!- Realizar Pagamento⬇️</h2>
-      <p style="color:#4b5563;margin-top:6px;">Evento: 06/08/2026</p>
+      <h2 style="font-size:1.5rem;font-weight:700;margin-top:12px;color:#15803d">Inscrição Confirmada!-fazer Pagamento⬇️</h2>
+      <p style="color:#4b5563;margin-top:6px;">Evento: 06/09/2026</p>
     </div>
     ${medalhaHTML}
     <div class="confirmed-numero-box">
@@ -722,7 +722,7 @@ async function carregarAdminUI() {
     const doc = new jsPDF("landscape");
     const pageWidth = doc.internal.pageSize.getWidth();
     const dataAtual = new Date().toLocaleString("pt-BR");
-    const dataEvento = "06/08/2026";
+    const dataEvento = "06/09/2026";
 
     doc.setFillColor(30, 74, 47);
     doc.rect(0, 0, pageWidth, 32, "F");
