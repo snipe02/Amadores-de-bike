@@ -471,7 +471,7 @@ async function mostrarConfirmacao(registro) {
   container.innerHTML = `
     <div style="text-align:center;margin-bottom:16px">
       <div class="confirmed-avatar"><i class="fas fa-check-double"></i></div>
-      <h2 style="font-size:1.5rem;font-weight:700;margin-top:12px;color:#15803d">Inscrição Confirmada!-faça o Pagamento em baixo</h2>
+      <h2 style="font-size:1.5rem;font-weight:700;margin-top:12px;color:#15803d">Inscrição Confirmada!-fazer pagamento⬇️</h2>
       <p style="color:#4b5563;margin-top:6px;">Evento: 06/08/2026</p>
     </div>
     ${medalhaHTML}
