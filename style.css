@@ -1,0 +1,794 @@
+/* ===== Reset e Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #eef2ef;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes medalBounce {
+  0% {
+    transform: scale(0) rotate(-15deg);
+  }
+  60% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes medalShine {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+@keyframes pulse-gold {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 193, 7, 0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #2e7d32;
+  animation: spin 0.6s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.toast-custom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.25s ease;
+}
+
+.panel {
+  display: none;
+}
+.panel.ativo {
+  display: block;
+}
+
+/* ===== Header ===== */
+.eco-header {
+  background: #35656f;
+  color: #fff;
+  padding: 12px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+.eco-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.eco-logo-icon {
+  background: #e67e22;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.eco-logo h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.875rem;
+  letter-spacing: 0.05em;
+}
+.eco-badge {
+  background: #e67e22;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* ===== Tabs ===== */
+.tab-nav {
+  max-width: 72rem;
+  margin: 24px auto 0;
+  padding: 0 16px;
+}
+.tab-nav-inner {
+  background: #fff;
+  border-radius: 999px;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #6b7280;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-family: "DM Sans", sans-serif;
+}
+.tab-btn:hover {
+  background: #f3f4f6;
+}
+.tab-btn.active-inscricao {
+  background: #2e746b;
+  color: #fff;
+}
+.tab-btn.active-confirmado {
+  background: #357479;
+  color: #fff;
+}
+.tab-btn.active-admin {
+  background: #6c3483;
+  color: #fff;
+}
+.tab-hidden {
+  display: none !important;
+}
+
+.content-area {
+  max-width: 72rem;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.card-header {
+  padding: 16px 24px;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-header.green {
+  background: #3d7b7a;
+}
+.card-header.teal {
+  background: #1f7942;
+}
+.card-header.purple {
+  background: #6c3483;
+}
+.card-body {
+  padding: 24px;
+}
+
+/* ===== Formulário ===== */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block;
+  font-weight: 700;
+  color: #1e4a2f;
+  margin-bottom: 4px;
+}
+.form-label.obrigatorio::after {
+  content: " *";
+  color: #e67e22;
+}
+.form-input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  padding: 10px 16px;
+  outline: 0;
+  background: #f9fafb;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+}
+.form-input:focus {
+  border-color: #e67e22;
+  background: #fff;
+}
+.form-input.erro {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+/* ===== Botões ===== */
+.btn {
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-orange {
+  background: #e67e22;
+  color: #fff;
+}
+.btn-orange:hover:not(:disabled) {
+  background: #c0621a;
+}
+.btn-green {
+  background: #15803d;
+  color: #fff;
+}
+.btn-gray {
+  background: #e5e7eb;
+  color: #374151;
+}
+.btn-purple {
+  background: #6c3483;
+  color: #fff;
+}
+.btn-sm {
+  width: auto;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+}
+.btn-white-transparent {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 999px;
+  border: 0;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.valor-aviso {
+  background: #e6f7ec;
+  border: 1px solid #a5d6a7;
+  border-radius: 999px;
+  padding: 8px 16px;
+  text-align: center;
+  color: #1e5a2f;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ===== Confirmação ===== */
+.confirmed-avatar {
+  background: linear-gradient(135deg, #16a34a, #166534);
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(22, 101, 52, 0.4);
+}
+.confirmed-numero-box {
+  background: #f0fdf4;
+  border: 2px solid #86efac;
+  border-radius: 1rem;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+.confirmed-num-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #15803d;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.confirmed-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  color: #14532d;
+}
+.confirmed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.confirmed-item {
+  background: #f9fafb;
+  border-radius: 0.75rem;
+  padding: 12px;
+}
+.confirmed-item-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+.confirmed-item-value {
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* ===== Pix ===== */
+.pix-box {
+  background: #fff7ed;
+  border: 2px solid #fdba74;
+  border-radius: 1rem;
+  padding: 20px;
+  text-align: center;
+  margin: 4px 0 16px;
+}
+.pix-titulo {
+  font-weight: 700;
+  color: #c2410c;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.pix-valor {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.25rem;
+  color: #9a3412;
+  margin-bottom: 12px;
+}
+.pix-qr {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.pix-qr img,
+.pix-qr canvas {
+  border-radius: 0.75rem;
+  border: 6px solid #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+.pix-chave-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.pix-chave {
+  background: #fef3e8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #9a3412;
+  border: 1px dashed #fdba74;
+  letter-spacing: 0.5px;
+}
+.btn-copy-chave {
+  background: #e67e22;
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.btn-copy-chave:hover {
+  background: #c0621a;
+}
+.btn-copy-chave.copiado {
+  background: #15803d;
+}
+.pix-obs {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: #9a5b3a;
+}
+
+/* ===== Admin ===== */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 12px;
+  text-align: center;
+}
+.stat-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+}
+.stat-enviados {
+  color: #16a34a;
+}
+.stat-pendentes {
+  color: #dc2626;
+}
+.stat-pix {
+  color: #2563eb;
+}
+
+.admin-search {
+  flex: 1;
+  min-width: 160px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  margin-top: 16px;
+}
+table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: #fff;
+  table-layout: fixed;
+}
+th,
+td {
+  padding: 12px 8px;
+  text-align: left;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+  word-break: break-word;
+}
+th {
+  background: #f3f4f6;
+  font-weight: 700;
+}
+th:nth-child(1),
+td:nth-child(1) {
+  width: 52px;
+  text-align: center;
+}
+th:nth-child(2),
+td:nth-child(2) {
+  width: 180px;
+}
+th:nth-child(3),
+td:nth-child(3) {
+  width: 140px;
+}
+th:nth-child(4),
+td:nth-child(4) {
+  width: 130px;
+}
+th:nth-child(5),
+td:nth-child(5) {
+  width: 100px;
+  text-align: center;
+}
+th:nth-child(6),
+td:nth-child(6) {
+  width: 220px;
+}
+
+.badge-numero {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+
+.btn-action {
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "DM Sans", sans-serif;
+  margin: 2px;
+  white-space: nowrap;
+}
+.btn-pdf {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+.btn-pdf-nao-enviado {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+.btn-pdf-enviado {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+.btn-deletar {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.btn-edit {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+.btn-pix-toggle {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+.btn-pix-toggle.pago {
+  background: #d1fae5;
+  color: #065f46;
+  border-color: #6ee7b7;
+}
+
+.admin-legenda {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.legenda-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.verde {
+  background: #16a34a;
+}
+.vermelho {
+  background: #dc2626;
+}
+
+/* ===== Modais ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.hidden {
+  display: none;
+}
+.modal-box {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+}
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6c3483;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.modal-footer {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: flex-end;
+}
+
+/* ===== Medalha ===== */
+.medalha-container {
+  background: linear-gradient(
+    135deg,
+    #7c3f00,
+    #ffd700,
+    #fffacd,
+    #ffd700,
+    #7c3f00
+  );
+  background-size: 300% 100%;
+  border-radius: 1.25rem;
+  padding: 20px 16px;
+  text-align: center;
+  margin: 20px 0;
+  border: 3px solid #d4a017;
+  box-shadow:
+    0 6px 24px rgba(212, 160, 23, 0.45),
+    0 0 0 6px rgba(255, 215, 0, 0.12);
+  animation:
+    medalShine 3s linear infinite,
+    pulse-gold 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+.medalha-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  pointer-events: none;
+}
+.medalha-icone {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 4px;
+  animation: medalBounce 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.medalha-titulo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  color: #3d1c00;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.medalha-subtitulo {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6b3a00;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.medalha-faixa {
+  display: inline-block;
+  background: #d4a017;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 14px;
+  border-radius: 999px;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+.badge-medal {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(90deg, #ffd700, #ffe882, #ffd700);
+  color: #7c4700;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 4px;
+  border: 1px solid #d4a017;
+  white-space: nowrap;
+}
+.badge-duplicado {
+  background: #fef9c3;
+  color: #854d0e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 4px;
+  border: 1px solid #fde047;
+  white-space: nowrap;
+}
+.row-duplicada td {
+  background: #fffbeb !important;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .admin-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .confirmed-grid {
+    grid-template-columns: 1fr;
+  }
+  .eco-logo h1 {
+    font-size: 1.45rem;
+  }
+  .eco-header {
+    padding: 12px 16px;
+  }
+  .pix-chave-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pix-chave {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .btn-copy-chave {
+    justify-content: center;
+  }
+}
